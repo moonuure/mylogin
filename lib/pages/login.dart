@@ -1,8 +1,7 @@
-import 'dart:isolate';
-
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:mylogin/TFcomponents/my_button.dart';
+import 'package:mylogin/services/auto_sign_google.dart';
 import '../TFcomponents/tetx_field.dart';
 import '../TFcomponents/my_button.dart';
 import '../imageComponents/imagepath.dart';
@@ -157,11 +156,13 @@ class _LoginPageState extends State<LoginPage> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  ImagePath(imagepth: 'images/googleicon.png'),
+                  ImagePath(imagepth: 'images/googleicon.png',
+                  onTap: () => AuthService().signInWithGoogle(),),
                   SizedBox(
                     width: 25,
                   ),
-                  ImagePath(imagepth: 'images/fbicon.png')
+                  ImagePath(imagepth: 'images/fbicon.png',
+                   onTap: () => null,)
                 ],
               ),
               SizedBox(
